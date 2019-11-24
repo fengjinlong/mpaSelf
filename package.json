@@ -1,0 +1,38 @@
+{
+  "name": "mpa2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start ./dist/app.js --name app --watch",
+    "stop": "pm2 stop app",
+    "webDev": "webpack --mode development",
+    "gulpSer": "gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.4",
+    "copy-webpack-plugin": "^5.0.5",
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-watch": "^5.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "koa": "^2.11.0",
+    "koa-swig": "^2.2.1",
+    "webpack": "^4.41.2",
+    "webpack-build-notifier": "^2.0.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2",
+    "yargs-parser": "^16.1.0"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "koa-simple-router": "^0.2.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.15"
+  }
+}
