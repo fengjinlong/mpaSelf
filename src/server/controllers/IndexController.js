@@ -10,10 +10,10 @@ class IndexController extends Controller {
         }
     }
     async actionIndex(ctx, next) {
-        ctx.body = await ctx.render('Index/index')
+        ctx.body = await ctx.render('index/index')
     }
     async homeIndex(ctx, next) {
-        ctx.body = await ctx.render('Home/home')
+        ctx.body = await ctx.render('home/home')
     }
 }
 export default IndexController;

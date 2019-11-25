@@ -1,2 +1,2 @@
-// import fun from '../../components/index'
-// fun.init()
+import fun from '../../components/index'
+fun.init()

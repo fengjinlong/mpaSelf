@@ -13,14 +13,14 @@ module.exports = {
     publicPath: "/"
   },
   plugins: [
-    new WebpackBuildNotifierPlugin({
-      title: "🦁️ SSR Webpack Build",
-      logo: resolve("./xigua.png"),
-      suppressSuccess: true
-    }),
+    // new WebpackBuildNotifierPlugin({
+    //   title: "🦁️ SSR Webpack Build",
+    //   logo: resolve("./xigua.png"),
+    //   suppressSuccess: true
+    // }),
     new CopyPlugin([{
-      from: join(__dirname, "../", "src/web/pages/layouts/layout.html"),
-      to: "../views/pages/layouts/layout.html"
+      from: join(__dirname, "../", "src/web/pages/layout/layout.html"),
+      to: "../views/layout/layout.html"
     }, ]),
     new CopyPlugin([{
       from: join(__dirname, "../", "src/web/components"),

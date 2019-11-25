@@ -1,2 +1,2 @@
-// import fun from '../../components/home'
-// fun.init()
+import fun from '../../components/home'
+fun.init()

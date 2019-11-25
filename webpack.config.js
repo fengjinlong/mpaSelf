@@ -17,7 +17,7 @@ const {
 } = require("path")
 
 // 插件
-// const htmlAfterPlugin = require("./config/htmlAfterPlugin")
+const htmlWebpackPluginBeforeHtmlProcessing = require("./config/htmlAfterPlugin")
 
 // 入口文件
 let _entry = {}
@@ -32,8 +32,6 @@ let _plugins = [
 
 // 寻找全部的entry win不认识** 😄
 const files = glob.sync("./src/web/pages/**/*.entry.js")
-console.log('ffff')
-console.log(files)
 for (let item of files) {
   // './src/web/pages/home/home.entry.js',
   // console.log(/.+\/([a-zA-Z]+-[a-zA-Z]+)(\.entry\.js$)/g.test(item) == true)
@@ -41,12 +39,9 @@ for (let item of files) {
   // if (/.+\/([a-zA-Z]+-[a-zA-Z]+)(\/[a-zA-Z]+-[a-zA-Z]+)(\.entry\.js$)/g.test(item) == true) {
   if (true) {
     // const entryKey = RegExp.$1
-    console.log(item.lastIndexOf('/'))
     let ln = item.lastIndexOf('/')
-    console.log(item.indexOf('.', ln))
     let ln2 = item.indexOf('.', ln)
     let temName = item.substring(ln+1, ln2)
-    console.log(temName)
     // const [dist, template] = entryKey.split("-")
     // _entry[entryKey] = item
     _entry[temName] = item
@@ -63,8 +58,8 @@ for (let item of files) {
     }))
   }
 }
-console.log('_plugins')
-console.log(_plugins)
+// console.log('_plugins')
+// console.log(_plugins)
 
 const webpackConfig = {
   entry: _entry,
@@ -83,8 +78,8 @@ const webpackConfig = {
     }
   },
   plugins: [
-    ..._plugins
-    // new htmlAfterPlugin
+    ..._plugins,
+    new htmlWebpackPluginBeforeHtmlProcessing
   ]
 }
 module.exports = merge(webpackConfig, _mergeConfig)

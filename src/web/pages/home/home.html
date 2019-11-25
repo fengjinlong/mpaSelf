@@ -1,11 +1,9 @@
-<!-- {% extends '@layouts/layout.html' %} -->
-{% extends '../layouts/layout.html' %}
-<!-- @layouts @components 均被js替换 -->
+{% extends '../layout/layout.html' %}
 {% block title %} home {% endblock %}
 
 {% block content %}
-  <!-- {% include "@components/home/index.html" %} -->
   <div>1</div>
+  {% include "../../components/home/index.html" %}
 {% endblock %}
 
 {% block scripts %}
