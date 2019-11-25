@@ -1,3 +1,5 @@
+require('./index.css')
+
 const home = {
   init () {
     console.log('home')

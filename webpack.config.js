@@ -41,7 +41,7 @@ for (let item of files) {
     // const entryKey = RegExp.$1
     let ln = item.lastIndexOf('/')
     let ln2 = item.indexOf('.', ln)
-    let temName = item.substring(ln+1, ln2)
+    let temName = item.substring(ln + 1, ln2)
     // const [dist, template] = entryKey.split("-")
     // _entry[entryKey] = item
     _entry[temName] = item
@@ -71,6 +71,14 @@ const webpackConfig = {
     alias: {
       // "@components": resolve(__dirname, 'src/web/components')
     }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      }
+    ]
   },
   optimization: {
     runtimeChunk: {
