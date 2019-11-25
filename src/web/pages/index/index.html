@@ -2,8 +2,11 @@
 {% block title %} index {% endblock %}
 
 {% block content %}
-  <div>2</div>
-  {% include "../../components/index/index.html" %}
+  <!-- <div>{{data}}</div> -->
+  {% for ele in data%}
+  <p>{{ele}}</p>
+  {% endfor%}
+  {% include "../../components/index/index.html" with data%}
 {% endblock %}
 
 {% block scripts %}

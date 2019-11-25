@@ -73,12 +73,21 @@ const webpackConfig = {
     }
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      }
-    ]
+    rules: [{
+      test: /\.css$/i,
+      // loader: "style-loader!css-loader?modules&localIdentName=[path][name]---[local]---[hash:base64:5]"
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              localIdentName: '[path][local]--[hash:base64:5]',
+            },
+          },
+        }
+      ]
+    }]
   },
   optimization: {
     runtimeChunk: {

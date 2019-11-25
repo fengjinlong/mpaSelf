@@ -22,7 +22,7 @@ class IndexController extends Controller {
         }
     }
     async actionIndex(ctx, next) {
-        ctx.body = await ctx.render('index/index')
+        ctx.body = await ctx.render('index/index',{data: [11,21,13]})
     }
     async homeIndex(ctx, next) {
 
