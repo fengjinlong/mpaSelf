@@ -21,7 +21,7 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-watch": "^5.0.1",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "koa": "^2.11.0",
     "koa-swig": "^2.2.1",
     "style-loader": "^1.0.0",
